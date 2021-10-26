@@ -13,6 +13,8 @@
 		F49991672728BE78006DA6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49991662728BE78006DA6BE /* Assets.xcassets */; };
 		F499916A2728BE78006DA6BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49991692728BE78006DA6BE /* Preview Assets.xcassets */; };
 		F499916D2728BE78006DA6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F499916B2728BE78006DA6BE /* LaunchScreen.storyboard */; };
+		F49991932728C026006DA6BE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F49991922728C026006DA6BE /* .swiftlint.yml */; };
+		F49991962728C07E006DA6BE /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991952728C07E006DA6BE /* ApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F49991692728BE78006DA6BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F499916C2728BE78006DA6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F499916E2728BE78006DA6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49991922728C026006DA6BE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		F49991952728C07E006DA6BE /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		F49991542728BE76006DA6BE = {
 			isa = PBXGroup;
 			children = (
+				F49991922728C026006DA6BE /* .swiftlint.yml */,
 				F499915F2728BE76006DA6BE /* TheMealsApp */,
 				F499915E2728BE76006DA6BE /* Products */,
 			);
@@ -56,12 +61,10 @@
 		F499915F2728BE76006DA6BE /* TheMealsApp */ = {
 			isa = PBXGroup;
 			children = (
-				F49991602728BE76006DA6BE /* AppDelegate.swift */,
-				F49991622728BE76006DA6BE /* SceneDelegate.swift */,
-				F49991642728BE76006DA6BE /* ContentView.swift */,
-				F49991662728BE78006DA6BE /* Assets.xcassets */,
-				F499916B2728BE78006DA6BE /* LaunchScreen.storyboard */,
-				F499916E2728BE78006DA6BE /* Info.plist */,
+				F49991772728BEB3006DA6BE /* App */,
+				F49991762728BEAD006DA6BE /* Core */,
+				F49991752728BEA5006DA6BE /* Module */,
+				F49991742728BE9B006DA6BE /* Supporting Files */,
 				F49991682728BE78006DA6BE /* Preview Content */,
 			);
 			path = TheMealsApp;
@@ -75,6 +78,241 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F49991742728BE9B006DA6BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F49991662728BE78006DA6BE /* Assets.xcassets */,
+				F499916B2728BE78006DA6BE /* LaunchScreen.storyboard */,
+				F499916E2728BE78006DA6BE /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F49991752728BEA5006DA6BE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F49991832728BF3F006DA6BE /* Home */,
+				F49991822728BF37006DA6BE /* Detail */,
+				F49991802728BF25006DA6BE /* Favorite */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		F49991762728BEAD006DA6BE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F49991792728BEF0006DA6BE /* Data */,
+				F499917C2728BF08006DA6BE /* DI */,
+				F499917B2728BEFE006DA6BE /* Domain */,
+				F499917D2728BF0D006DA6BE /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F49991772728BEB3006DA6BE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F49991602728BE76006DA6BE /* AppDelegate.swift */,
+				F49991622728BE76006DA6BE /* SceneDelegate.swift */,
+				F49991642728BE76006DA6BE /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F49991782728BEDD006DA6BE /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				F499917F2728BF1D006DA6BE /* Response */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		F49991792728BEF0006DA6BE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F499917A2728BEF8006DA6BE /* Locale */,
+				F49991782728BEDD006DA6BE /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F499917A2728BEF8006DA6BE /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				F499917E2728BF17006DA6BE /* Entity */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		F499917B2728BEFE006DA6BE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F49991912728BFC8006DA6BE /* Model */,
+				F49991902728BFC3006DA6BE /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F499917C2728BF08006DA6BE /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		F499917D2728BF0D006DA6BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F499918F2728BFB0006DA6BE /* Network */,
+				F499918E2728BFA8006DA6BE /* Mapper */,
+				F499918D2728BF9C006DA6BE /* Extensions */,
+				F499918C2728BF94006DA6BE /* View */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F499917E2728BF17006DA6BE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		F499917F2728BF1D006DA6BE /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		F49991802728BF25006DA6BE /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				F499918B2728BF71006DA6BE /* Presenter */,
+				F499918A2728BF6C006DA6BE /* Router */,
+				F49991892728BF66006DA6BE /* View */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		F49991822728BF37006DA6BE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F49991882728BF5E006DA6BE /* Presenter */,
+				F49991872728BF58006DA6BE /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F49991832728BF3F006DA6BE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F49991862728BF52006DA6BE /* Presenter */,
+				F49991852728BF4A006DA6BE /* Router */,
+				F49991842728BF44006DA6BE /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F49991842728BF44006DA6BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F49991852728BF4A006DA6BE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F49991862728BF52006DA6BE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F49991872728BF58006DA6BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F49991882728BF5E006DA6BE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F49991892728BF66006DA6BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F499918A2728BF6C006DA6BE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F499918B2728BF71006DA6BE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F499918C2728BF94006DA6BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F499918D2728BF9C006DA6BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F499918E2728BFA8006DA6BE /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		F499918F2728BFB0006DA6BE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F49991952728C07E006DA6BE /* ApiService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F49991902728BFC3006DA6BE /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F49991912728BFC8006DA6BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +323,7 @@
 				F49991592728BE76006DA6BE /* Sources */,
 				F499915A2728BE76006DA6BE /* Frameworks */,
 				F499915B2728BE76006DA6BE /* Resources */,
+				F49991942728C045006DA6BE /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -132,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49991932728C026006DA6BE /* .swiftlint.yml in Resources */,
 				F499916D2728BE78006DA6BE /* LaunchScreen.storyboard in Resources */,
 				F499916A2728BE78006DA6BE /* Preview Assets.xcassets in Resources */,
 				F49991672728BE78006DA6BE /* Assets.xcassets in Resources */,
@@ -140,6 +380,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F49991942728C045006DA6BE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F49991592728BE76006DA6BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +408,7 @@
 			files = (
 				F49991612728BE76006DA6BE /* AppDelegate.swift in Sources */,
 				F49991632728BE76006DA6BE /* SceneDelegate.swift in Sources */,
+				F49991962728C07E006DA6BE /* ApiService.swift in Sources */,
 				F49991652728BE76006DA6BE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,4 @@ struct ApiService {
   static let getMealsDetail: (Int) -> String = { mealsId in
     return "\(API.baseUrl)lookup.php?i=\(mealsId)"
   }
-  static let searchMealsByName: (String) -> String = { query in
-    return "\(API.baseUrl)search.php?s=\(query)"
-  }
 }

@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F48B88312728C57900CB0FF6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F48B88302728C57900CB0FF6 /* Alamofire */; };
+		F48B88342728C71800CB0FF6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F48B88332728C71800CB0FF6 /* Realm */; };
+		F48B88362728C71800CB0FF6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F48B88352728C71800CB0FF6 /* RealmSwift */; };
+		F48B88392728D06A00CB0FF6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F48B88382728D06A00CB0FF6 /* SDWebImageSwiftUI */; };
 		F49991612728BE76006DA6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991602728BE76006DA6BE /* AppDelegate.swift */; };
 		F49991632728BE76006DA6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991622728BE76006DA6BE /* SceneDelegate.swift */; };
 		F49991652728BE76006DA6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991642728BE76006DA6BE /* ContentView.swift */; };
@@ -35,6 +39,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48B88392728D06A00CB0FF6 /* SDWebImageSwiftUI in Frameworks */,
+				F48B88362728C71800CB0FF6 /* RealmSwift in Frameworks */,
+				F48B88342728C71800CB0FF6 /* Realm in Frameworks */,
+				F48B88312728C57900CB0FF6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +338,12 @@
 			dependencies = (
 			);
 			name = TheMealsApp;
+			packageProductDependencies = (
+				F48B88302728C57900CB0FF6 /* Alamofire */,
+				F48B88332728C71800CB0FF6 /* Realm */,
+				F48B88352728C71800CB0FF6 /* RealmSwift */,
+				F48B88382728D06A00CB0FF6 /* SDWebImageSwiftUI */,
+			);
 			productName = TheMealsApp;
 			productReference = F499915D2728BE76006DA6BE /* TheMealsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -357,6 +371,11 @@
 				Base,
 			);
 			mainGroup = F49991542728BE76006DA6BE;
+			packageReferences = (
+				F48B882F2728C57900CB0FF6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F48B88322728C71800CB0FF6 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				F48B88372728D06A00CB0FF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = F499915E2728BE76006DA6BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -552,7 +571,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TheMealsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 78SHMFQ884;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TheMealsApp/Info.plist;
+				INFOPLIST_FILE = "TheMealsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,7 +592,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TheMealsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 78SHMFQ884;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TheMealsApp/Info.plist;
+				INFOPLIST_FILE = "TheMealsApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,6 +626,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F48B882F2728C57900CB0FF6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+		F48B88322728C71800CB0FF6 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
+		F48B88372728D06A00CB0FF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F48B88302728C57900CB0FF6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F48B882F2728C57900CB0FF6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F48B88332728C71800CB0FF6 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F48B88322728C71800CB0FF6 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		F48B88352728C71800CB0FF6 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F48B88322728C71800CB0FF6 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		F48B88382728D06A00CB0FF6 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F48B88372728D06A00CB0FF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F49991552728BE76006DA6BE /* Project object */;
 }

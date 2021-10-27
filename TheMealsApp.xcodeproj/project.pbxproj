@@ -23,6 +23,11 @@
 		F48B884D2728E01B00CB0FF6 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B884C2728E01B00CB0FF6 /* MealModel.swift */; };
 		F48B884F2728E06700CB0FF6 /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B884E2728E06700CB0FF6 /* CategoryMapper.swift */; };
 		F48B88512728E07100CB0FF6 /* MealMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B88502728E07100CB0FF6 /* MealMapper.swift */; };
+		F48B88532728E8DD00CB0FF6 /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B88522728E8DD00CB0FF6 /* RoundCorner.swift */; };
+		F48B88552728E90500CB0FF6 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B88542728E90500CB0FF6 /* BlurView.swift */; };
+		F48B88572728E92400CB0FF6 /* CustomEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B88562728E92400CB0FF6 /* CustomEmptyView.swift */; };
+		F48B88592728E96300CB0FF6 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B88582728E96300CB0FF6 /* ActivityIndicator.swift */; };
+		F48B885B2728E99200CB0FF6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B885A2728E99200CB0FF6 /* SearchBar.swift */; };
 		F49991612728BE76006DA6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991602728BE76006DA6BE /* AppDelegate.swift */; };
 		F49991632728BE76006DA6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991622728BE76006DA6BE /* SceneDelegate.swift */; };
 		F49991652728BE76006DA6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49991642728BE76006DA6BE /* ContentView.swift */; };
@@ -46,6 +51,11 @@
 		F48B884C2728E01B00CB0FF6 /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 		F48B884E2728E06700CB0FF6 /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
 		F48B88502728E07100CB0FF6 /* MealMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMapper.swift; sourceTree = "<group>"; };
+		F48B88522728E8DD00CB0FF6 /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
+		F48B88542728E90500CB0FF6 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		F48B88562728E92400CB0FF6 /* CustomEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmptyView.swift; sourceTree = "<group>"; };
+		F48B88582728E96300CB0FF6 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		F48B885A2728E99200CB0FF6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F499915D2728BE76006DA6BE /* TheMealsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMealsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49991602728BE76006DA6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49991622728BE76006DA6BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -312,6 +322,11 @@
 		F499918C2728BF94006DA6BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F48B88522728E8DD00CB0FF6 /* RoundCorner.swift */,
+				F48B88542728E90500CB0FF6 /* BlurView.swift */,
+				F48B88562728E92400CB0FF6 /* CustomEmptyView.swift */,
+				F48B88582728E96300CB0FF6 /* ActivityIndicator.swift */,
+				F48B885A2728E99200CB0FF6 /* SearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,14 +481,19 @@
 				F48B883F2728D25000CB0FF6 /* LocaleDataSource.swift in Sources */,
 				F49991612728BE76006DA6BE /* AppDelegate.swift in Sources */,
 				F48B88472728D71000CB0FF6 /* RemoteDataSource.swift in Sources */,
+				F48B88552728E90500CB0FF6 /* BlurView.swift in Sources */,
 				F49991632728BE76006DA6BE /* SceneDelegate.swift in Sources */,
+				F48B88572728E92400CB0FF6 /* CustomEmptyView.swift in Sources */,
+				F48B88532728E8DD00CB0FF6 /* RoundCorner.swift in Sources */,
 				F48B88452728D5CA00CB0FF6 /* MealsResponse.swift in Sources */,
 				F48B88432728D5BD00CB0FF6 /* CategoriesResponse.swift in Sources */,
 				F49991962728C07E006DA6BE /* ApiService.swift in Sources */,
 				F49991652728BE76006DA6BE /* ContentView.swift in Sources */,
 				F48B884F2728E06700CB0FF6 /* CategoryMapper.swift in Sources */,
+				F48B885B2728E99200CB0FF6 /* SearchBar.swift in Sources */,
 				F48B88412728D41800CB0FF6 /* CustomErrorExt.swift in Sources */,
 				F48B883B2728D14000CB0FF6 /* CategoryEntity.swift in Sources */,
+				F48B88592728E96300CB0FF6 /* ActivityIndicator.swift in Sources */,
 				F48B88492728DE6C00CB0FF6 /* MealRepository.swift in Sources */,
 				F48B883D2728D18600CB0FF6 /* MealEntity.swift in Sources */,
 				F48B88512728E07100CB0FF6 /* MealMapper.swift in Sources */,

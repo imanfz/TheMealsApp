@@ -33,7 +33,7 @@ final class MealMapper {
       newMeal.id = result.id ?? ""
       newMeal.name = result.name ?? "Unknow"
       newMeal.image = result.image ?? "Unknow"
-      newMeal.categoryName = categoryName
+      newMeal.category_name = categoryName
       return newMeal
     }
   }
@@ -46,7 +46,7 @@ final class MealMapper {
         id: result.id,
         name: result.name,
         image: result.image,
-        categoryName: result.categoryName
+        categoryName: result.category_name
       )
     }
   }

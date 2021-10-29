@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  @EnvironmentObject var homePresenter: HomePresenter
+  
+  var body: some View {
+    TabView {
+      NavigationView {
+        HomeView(presenter: homePresenter)
+      }.tabItem {
+          Image(systemName: "Home.fill")
+          Text("Home")
+        }
+      NavigationView {
+        FavoriteView()
+      }.tabItem {
+          Image(systemName: "Favorite.fill")
+          Text("Favorite")
+        }
+    }.background(Color.black)
+  }
 }

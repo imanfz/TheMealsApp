@@ -6,35 +6,33 @@
 //
 
 import Foundation
+import Combine
 
 protocol DetailUseCase {
 
   func getCategory() -> CategoryModel
-  func getMealByCategory() -> MealModel
+  func getMealByCategory() -> AnyPublisher<[MealModel], Error>
 
 }
 
 class DetailInteractor: DetailUseCase {
-
+  
   private let repository: MealRepositoryProtocol
   private let category: CategoryModel
-  private let meal: MealModel
 
   required init(
     repository: MealRepositoryProtocol,
-    category: CategoryModel,
-    meal: MealModel
+    category: CategoryModel
   ) {
     self.repository = repository
     self.category = category
-    self.meal = meal
   }
 
   func getCategory() -> CategoryModel {
     return category
   }
-
-  func getMealByCategory() -> MealModel {
-    return meal
+  
+  func getMealByCategory() -> AnyPublisher<[MealModel], Error> {
+    return repository.getMealsByCategory(categoryName: category.title)
   }
 }

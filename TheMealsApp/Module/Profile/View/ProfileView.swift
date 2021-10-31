@@ -15,10 +15,6 @@ struct ProfileView: View {
 
 extension ProfileView {
   
-  var spacer: some View {
-    Spacer()
-  }
-  
   var imageProfile: some View {
     Image("iman")
       .resizable()
@@ -32,15 +28,13 @@ extension ProfileView {
   
   var content: some View {
     VStack {
-      spacer
       imageProfile
-      spacer
       Text("Iman Faizal")
         .font(.title)
         .bold()
+        .padding(.top)
       Text("imanfz1103@gmail.com")
         .font(.headline)
-      spacer
     }.navigationBarTitle(
       Text("Profile"),
       displayMode: .automatic

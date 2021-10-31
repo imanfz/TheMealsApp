@@ -181,10 +181,10 @@
 		F49991752728BEA5006DA6BE /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				F4C1CC1E272E973700FB0BA5 /* Profile */,
-				F49991832728BF3F006DA6BE /* Home */,
 				F49991822728BF37006DA6BE /* Detail */,
 				F49991802728BF25006DA6BE /* Favorite */,
+				F49991832728BF3F006DA6BE /* Home */,
+				F4C1CC1E272E973700FB0BA5 /* Profile */,
 			);
 			path = Module;
 			sourceTree = "<group>";

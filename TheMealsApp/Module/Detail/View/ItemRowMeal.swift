@@ -44,7 +44,7 @@ struct ItemRowMeal: View {
       }
     }
   }
-
+  
 }
 
 extension ItemRowMeal {

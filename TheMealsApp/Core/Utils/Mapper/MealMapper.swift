@@ -19,6 +19,7 @@ final class MealMapper {
         id: result.id ?? "",
         name: result.name ?? "Unknow",
         image: result.image ?? "Unknow",
+        favorite: false,
         categoryName: categoryName
       )
     }
@@ -46,9 +47,22 @@ final class MealMapper {
         id: result.id,
         name: result.name,
         image: result.image,
+        favorite: result.favorite,
         categoryName: result.category_name
       )
     }
+  }
+  
+  static func mapMealDomainsToEntities(
+    input mealModel: MealModel
+  ) -> MealEntity {
+    let meal = MealEntity()
+    meal.id = mealModel.id
+    meal.name = mealModel.name
+    meal.image = mealModel.image
+    meal.favorite = mealModel.favorite
+    meal.category_name = mealModel.categoryName
+    return meal
   }
   
 }

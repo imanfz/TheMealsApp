@@ -10,11 +10,13 @@ PODS:
   - SDWebImage/Core (5.12.1)
   - SDWebImageSwiftUI (2.0.2):
     - SDWebImage (~> 5.10)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - RealmSwift (~> 10.18)
   - SDWebImageSwiftUI (~> 2.0)
+  - Toaster
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - RealmSwift
     - SDWebImage
     - SDWebImageSwiftUI
+    - Toaster
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   RealmSwift: fe2f33d731f47aaf4c3618930f9f7cf7b935c33f
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: d4da597dfe2b9e73fc08adfcf7f19a4dcff2045a
+PODFILE CHECKSUM: 32cdd824057e319698644b5d053fb041d15f2684
 
 COCOAPODS: 1.11.2

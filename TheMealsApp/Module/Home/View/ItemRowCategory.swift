@@ -18,7 +18,7 @@ struct ItemRowCategory: View {
     }
     .frame(width: UIScreen.main.bounds.width - 32, height: 250)
     .background(Color.random.opacity(0.3))
-    .cornerRadius(30)
+    .cornerRadius(20)
   }
 
 }
@@ -32,7 +32,7 @@ extension ItemRowCategory {
       .transition(.fade(duration: 0.5))
       .scaledToFit()
       .frame(width: 200)
-      .cornerRadius(30)
+      .cornerRadius(20)
       .padding(.top)
   }
   

@@ -19,6 +19,8 @@ protocol LocaleDataSourceProtocol: AnyObject {
   
   func searchMealByName(from query: String) -> AnyPublisher<[MealEntity], Error>
   
+  func getMealFavorite() -> AnyPublisher<[MealEntity], Error>
+  func addMealToFavorite(from meals: MealEntity) -> AnyPublisher<Bool, Error>
 }
 
 final class LocaleDataSource: NSObject {
@@ -73,7 +75,7 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
       if let realm = self.realm {
         let meals: Results<MealEntity> = {
           realm.objects(MealEntity.self)
-            .filter("categoryId == %@", categoryName)
+            .filter("category_name == %@", categoryName)
             .sorted(byKeyPath: "name", ascending: true)
         }()
         completion(.success(meals.toArray(ofType: MealEntity.self)))
@@ -111,6 +113,38 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
             .sorted(byKeyPath: "name", ascending: true)
         }()
         completion(.success(meals.toArray(ofType: MealEntity.self)))
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }.eraseToAnyPublisher()
+  }
+  
+  func getMealFavorite() -> AnyPublisher<[MealEntity], Error> {
+    return Future<[MealEntity], Error> { completion in
+      if let realm = self.realm {
+        let meals: Results<MealEntity> = {
+          realm.objects(MealEntity.self)
+            .filter("favorite == %@", true)
+            .sorted(byKeyPath: "name", ascending: false)
+        }()
+        completion(.success(meals.toArray(ofType: MealEntity.self)))
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }.eraseToAnyPublisher()
+  }
+  
+  func addMealToFavorite(from meal: MealEntity) -> AnyPublisher<Bool, Error> {
+    return Future<Bool, Error> { completion in
+      if let realm = self.realm {
+        do {
+          try realm.write {
+            realm.add(meal, update: .modified)
+            completion(.success(true))
+          }
+        } catch {
+          completion(.failure(DatabaseError.requestFailed))
+        }
       } else {
         completion(.failure(DatabaseError.invalidInstance))
       }

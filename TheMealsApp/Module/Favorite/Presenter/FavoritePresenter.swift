@@ -1,33 +1,31 @@
 //
-//  DetailPresenter.swift
+//  FavoritePresenter.swift
 //  TheMealsApp
 //
-//  Created by Iman Faizal on 28/10/21.
+//  Created by Iman Faizal on 31/10/21.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 import Toaster
 
-class DetailPresenter: ObservableObject {
-
-  private let detailUseCase: DetailUseCase
+class FavoritePresenter: ObservableObject {
+  
+  private let favoriteUseCase: FavoriteUseCase
   private var cancellables: Set<AnyCancellable> = []
-
-  @Published var category: CategoryModel
-  @Published var meal: [MealModel] = []
+  
+  @Published var meals: [MealModel] = []
   @Published var errorMessage: String = ""
   @Published var loadingState: Bool = false
   @Published var updateState: Bool = false
-
-  init(detailUseCase: DetailUseCase) {
-    self.detailUseCase = detailUseCase
-    category = detailUseCase.getCategory()
+  
+  init(favoriteUseCase: FavoriteUseCase) {
+    self.favoriteUseCase = favoriteUseCase
   }
-
-  func getMealByCategory() {
+  
+  func getMealFavorite() {
     loadingState = true
-    detailUseCase.getMealByCategory(categoryName: self.category.title)
+    favoriteUseCase.getMealFavorite()
       .receive(on: RunLoop.main)
       .sink(receiveCompletion: { completion in
         switch completion {
@@ -36,8 +34,8 @@ class DetailPresenter: ObservableObject {
         case .finished:
           self.loadingState = false
         }
-      }, receiveValue: { meal in
-        self.meal = meal
+      }, receiveValue: { meals in
+        self.meals = meals
       })
       .store(in: &cancellables)
   }
@@ -45,7 +43,7 @@ class DetailPresenter: ObservableObject {
   func addMealToFavorite(from meal: MealModel) {
     loadingState = true
     updateState = false
-    detailUseCase.addMealToFavorite(from: meal)
+    favoriteUseCase.addMealToFavorite(from: meal)
       .receive(on: RunLoop.main)
       .sink(receiveCompletion: { completion in
         switch completion {
@@ -53,10 +51,10 @@ class DetailPresenter: ObservableObject {
           self.errorMessage = String(describing: completion)
         case .finished:
           self.loadingState = false
+          self.objectWillChange.send()
         }
       }, receiveValue: { result in
         self.updateState = result
-        
         if !meal.favorite {
           if self.updateState {
             Toast(text: "Successfuly remove \(meal.name) from favorites").show()
@@ -70,7 +68,7 @@ class DetailPresenter: ObservableObject {
             Toast(text: "Error, please try again").show()
           }
         }
-        self.getMealByCategory()
+        self.getMealFavorite()
       })
       .store(in: &cancellables)
   }

@@ -18,7 +18,9 @@ class HomeInteractor: HomeUseCase {
   
   private let repository: MealRepositoryProtocol
   
-  required init(repository: MealRepositoryProtocol) {
+  required init(
+    repository: MealRepositoryProtocol
+  ) {
     self.repository = repository
   }
   

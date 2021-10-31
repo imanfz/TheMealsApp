@@ -11,7 +11,9 @@ import Combine
 protocol DetailUseCase {
 
   func getCategory() -> CategoryModel
-  func getMealByCategory() -> AnyPublisher<[MealModel], Error>
+  func getMealByCategory(categoryName: String) -> AnyPublisher<[MealModel], Error>
+  
+  func addMealToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error>
 
 }
 
@@ -32,7 +34,12 @@ class DetailInteractor: DetailUseCase {
     return category
   }
   
-  func getMealByCategory() -> AnyPublisher<[MealModel], Error> {
-    return repository.getMealsByCategory(categoryName: category.title)
+  func getMealByCategory(categoryName: String) -> AnyPublisher<[MealModel], Error> {
+    return repository.getMealsByCategory(categoryName: categoryName)
   }
+  
+  func addMealToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error> {
+    return repository.addMealsToFavorite(from: meal)
+  }
+  
 }

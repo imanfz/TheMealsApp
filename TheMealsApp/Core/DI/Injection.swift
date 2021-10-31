@@ -29,9 +29,9 @@ final class Injection: NSObject {
     return DetailInteractor(repository: repository, category: category)
   }
   
-  func privideFavorite(meal: MealModel) -> FavoriteUseCase {
+  func provideFavorite() -> FavoriteUseCase {
     let repository = provideRepository()
-    return FavoriteInteractor(repository: repository, meal: meal)
+    return FavoriteInteractor(repository: repository)
   }
 
 }

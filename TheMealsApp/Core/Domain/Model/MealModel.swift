@@ -12,6 +12,7 @@ struct MealModel: Equatable, Identifiable {
   let id: String
   let name: String
   let image: String
+  var favorite: Bool
   let categoryName: String
   
 }

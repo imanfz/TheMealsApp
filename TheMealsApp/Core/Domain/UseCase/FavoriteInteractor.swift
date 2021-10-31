@@ -6,28 +6,32 @@
 //
 
 import Foundation
+import Combine
 
 protocol FavoriteUseCase {
 
-  func getFavorite() -> MealModel
+  func getMealFavorite() -> AnyPublisher<[MealModel], Error>
+  
+  func addMealToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error>
 
 }
 
 class FavoriteInteractor: FavoriteUseCase {
 
   private let repository: MealRepositoryProtocol
-  private let meal: MealModel
 
   required init(
-    repository: MealRepositoryProtocol,
-    meal: MealModel
+    repository: MealRepositoryProtocol
   ) {
     self.repository = repository
-    self.meal = meal
   }
-
-  func getFavorite() -> MealModel {
-    return meal
+  
+  func getMealFavorite() -> AnyPublisher<[MealModel], Error> {
+    return repository.getMealsFavorite()
+  }
+  
+  func addMealToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error> {
+    return repository.addMealsToFavorite(from: meal)
   }
 
 }

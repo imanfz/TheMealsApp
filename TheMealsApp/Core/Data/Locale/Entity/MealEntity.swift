@@ -13,6 +13,7 @@ class MealEntity: Object {
   @objc dynamic var id: String = ""
   @objc dynamic var name: String = ""
   @objc dynamic var image: String = ""
+  @objc dynamic var favorite: Bool = false
   @objc dynamic var category_name: String = ""
   
   override static func primaryKey() -> String? {

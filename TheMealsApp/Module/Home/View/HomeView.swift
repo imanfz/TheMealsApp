@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
 
   @ObservedObject var presenter: HomePresenter
+  @State var searchText: String = ""
   
   var body: some View {
     ZStack {
@@ -40,18 +41,32 @@ extension HomeView {
   }
   
   var content: some View {
-    ScrollView(.vertical, showsIndicators: false) {
-      ForEach(
-        self.presenter.categories,
-        id: \.id
-      ) { category in
-        ZStack {
-          self.presenter.linkBuilder(for: category) {
-            ItemRowCategory(category: category)
-          }.buttonStyle(PlainButtonStyle())
-        }.padding(8)
+    VStack {
+      SearchBar(
+        text: $searchText,
+        onSearchButtonClicked: hideKeyboard,
+        onSearchCancelButtonClicked: hideKeyboard,
+        placeHolder: "Search category"
+      )
+      ScrollView(.vertical, showsIndicators: false) {
+        ForEach(
+          self.presenter.categories.filter {
+            self.searchText.isEmpty ? true : $0.title.contains(self.searchText)
+          },
+          id: \.id
+        ) { category in
+          ZStack {
+            self.presenter.linkBuilder(for: category) {
+              ItemRowCategory(category: category)
+            }.buttonStyle(PlainButtonStyle())
+          }.padding(8)
+        }
       }
     }
+  }
+  
+  func hideKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
   }
   
 }

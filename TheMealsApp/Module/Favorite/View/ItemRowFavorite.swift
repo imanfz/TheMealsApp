@@ -12,6 +12,7 @@ struct ItemRowFavorite: View {
 
   var meal: MealModel
   let Action: () -> Void
+  @State private var sh = false
   
   var body: some View {
     HStack {
@@ -33,7 +34,6 @@ struct ItemRowFavorite: View {
     .background(Color.gray.opacity(0.2))
     .cornerRadius(20)
   }
-
 }
 
 extension ItemRowFavorite {
@@ -70,5 +70,5 @@ extension ItemRowFavorite {
         .foregroundColor(.red)
     })
   }
-
+  
 }

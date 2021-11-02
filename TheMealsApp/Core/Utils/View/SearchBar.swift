@@ -11,6 +11,8 @@ struct SearchBar: UIViewRepresentable {
 
   @Binding var text: String
   var onSearchButtonClicked: (() -> Void)?
+  var onSearchCancelButtonClicked: (() -> Void)?
+  var placeHolder: String
 
   class Coordinator: NSObject, UISearchBarDelegate {
 
@@ -32,6 +34,12 @@ struct SearchBar: UIViewRepresentable {
     ) {
       control.onSearchButtonClicked?()
     }
+    
+    func searchBarCancelButtonClicked(
+      _ searchBar: UISearchBar
+    ) {
+      control.onSearchCancelButtonClicked?()
+    }
   }
 
   func makeCoordinator() -> Coordinator {
@@ -43,6 +51,7 @@ struct SearchBar: UIViewRepresentable {
   ) -> UISearchBar {
     let searchBar = UISearchBar(frame: .zero)
     searchBar.delegate = context.coordinator
+    searchBar.placeholder = placeHolder
     return searchBar
   }
 

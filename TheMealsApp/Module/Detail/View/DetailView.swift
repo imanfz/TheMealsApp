@@ -7,10 +7,13 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import RealmSwift
 
 struct DetailView: View {
   @ObservedObject var presenter: DetailPresenter
   @Environment(\.presentationMode) var presentation
+  @State var isPresented = false
+  @State var selectedMeal: MealModel?
 
   var body: some View {
     ZStack {
@@ -33,17 +36,46 @@ struct DetailView: View {
         ToolbarItem(placement: .navigation) {
            Image(systemName: "arrow.left")
            .onTapGesture {
+             if self.isPresented {
+               self.isPresented = false
+             } else {
                // code to dismiss the view
                self.presentation.wrappedValue.dismiss()
+             }
            }
         }
      })
     .navigationTitle("Details")
     .edgesIgnoringSafeArea(.bottom)
+    .modifier(PopupView(
+      isPresented: isPresented,
+      alignment: .center,
+      content: {
+        BlurView().onTapGesture {
+          self.isPresented = false
+        }.opacity(0.7)
+        VStack(alignment: .center) {
+          imageMeal(self.selectedMeal?.image ?? "")
+          headerTitle(self.selectedMeal?.name ?? "")
+        }.frame(
+          width: 250,
+          height: 300
+        ).background(Color.white)
+          .cornerRadius(30)
+          .onTapGesture {
+            self.isPresented = false
+          }
+        }
+    ))
   }
 }
 
 extension DetailView {
+  
+  func handleTap(_ meal: MealModel) {
+    self.selectedMeal = meal
+    self.isPresented = true
+  }
   
   var spacer: some View {
     Spacer()
@@ -58,6 +90,20 @@ extension DetailView {
 
   var imageCategory: some View {
     WebImage(url: URL(string: self.presenter.category.image)
+    ).resizable()
+      .indicator(.activity)
+      .transition(.fade(duration: 0.5))
+      .scaledToFit()
+      .cornerRadius(20)
+      .frame(
+        width: 200.0,
+        height: 200.0,
+        alignment: .center
+      )
+  }
+  
+  func imageMeal(_ urlImage: String) -> some View {
+    return WebImage(url: URL(string: urlImage)
     ).resizable()
       .indicator(.activity)
       .transition(.fade(duration: 0.5))
@@ -113,6 +159,9 @@ extension DetailView {
       self.presenter.meal
     ) { meal in
       ItemRowMeal(meal: meal, Action: addRemoveFavorite(from: meal))
+        .onTapGesture {
+          self.handleTap(meal)
+        }
     }
   }
   

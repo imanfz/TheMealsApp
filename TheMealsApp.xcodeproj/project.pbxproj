@@ -51,6 +51,16 @@
 		F4FB830E272C417700C4C284 /* ItemRowMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB830D272C417700C4C284 /* ItemRowMeal.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F462B4FD273214B7006912F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F49991552728BE76006DA6BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F499915C2728BE76006DA6BE;
+			remoteInfo = TheMealsApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		57486E894168BB44E34CF51C /* Pods-TheMealsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMealsApp.release.xcconfig"; path = "Target Support Files/Pods-TheMealsApp/Pods-TheMealsApp.release.xcconfig"; sourceTree = "<group>"; };
 		6083F19F96407C1EB4218BF9 /* Pods-TheMealsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMealsApp.debug.xcconfig"; path = "Target Support Files/Pods-TheMealsApp/Pods-TheMealsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +76,7 @@
 		F440FDFF272A035900FFFD0D /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		F440FE01272A03D800FFFD0D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		F440FE03272A040A00FFFD0D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F462B4F9273214B7006912F9 /* TheMealsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMealsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48B883A2728D14000CB0FF6 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
 		F48B883C2728D18600CB0FF6 /* MealEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntity.swift; sourceTree = "<group>"; };
 		F48B883E2728D25000CB0FF6 /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
@@ -101,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F462B4F6273214B7006912F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F499915A2728BE76006DA6BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F499915D2728BE76006DA6BE /* TheMealsApp.app */,
+				F462B4F9273214B7006912F9 /* TheMealsAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -447,6 +466,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F462B4F8273214B7006912F9 /* TheMealsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F462B4FF273214B7006912F9 /* Build configuration list for PBXNativeTarget "TheMealsAppTests" */;
+			buildPhases = (
+				F462B4F5273214B7006912F9 /* Sources */,
+				F462B4F6273214B7006912F9 /* Frameworks */,
+				F462B4F7273214B7006912F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F462B4FE273214B7006912F9 /* PBXTargetDependency */,
+			);
+			name = TheMealsAppTests;
+			productName = TheMealsAppTests;
+			productReference = F462B4F9273214B7006912F9 /* TheMealsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F499915C2728BE76006DA6BE /* TheMealsApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49991712728BE78006DA6BE /* Build configuration list for PBXNativeTarget "TheMealsApp" */;
@@ -473,9 +510,13 @@
 		F49991552728BE76006DA6BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					F462B4F8273214B7006912F9 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = F499915C2728BE76006DA6BE;
+					};
 					F499915C2728BE76006DA6BE = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -495,11 +536,19 @@
 			projectRoot = "";
 			targets = (
 				F499915C2728BE76006DA6BE /* TheMealsApp */,
+				F462B4F8273214B7006912F9 /* TheMealsAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F462B4F7273214B7006912F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F499915B2728BE76006DA6BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,6 +623,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F462B4F5273214B7006912F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F49991592728BE76006DA6BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,6 +676,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F462B4FE273214B7006912F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F499915C2728BE76006DA6BE /* TheMealsApp */;
+			targetProxy = F462B4FD273214B7006912F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F499916B2728BE78006DA6BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -632,6 +696,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F462B500273214B7006912F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78SHMFQ884;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iman.latihan.TheMealsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheMealsApp.app/TheMealsApp";
+			};
+			name = Debug;
+		};
+		F462B501273214B7006912F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78SHMFQ884;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iman.latihan.TheMealsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheMealsApp.app/TheMealsApp";
+			};
+			name = Release;
+		};
 		F499916F2728BE78006DA6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -795,6 +909,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F462B4FF273214B7006912F9 /* Build configuration list for PBXNativeTarget "TheMealsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F462B500273214B7006912F9 /* Debug */,
+				F462B501273214B7006912F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F49991582728BE76006DA6BE /* Build configuration list for PBXProject "TheMealsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

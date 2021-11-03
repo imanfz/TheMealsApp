@@ -14,8 +14,6 @@ protocol MealRepositoryProtocol {
   
   func getMealsByCategory(categoryName: String) -> AnyPublisher<[MealModel], Error>
   
-  func searchMealByName(query: String) -> AnyPublisher<[MealModel], Error>
-  
   func getMealsFavorite() -> AnyPublisher<[MealModel], Error>
   
   func addMealsToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error>
@@ -77,17 +75,6 @@ extension MealRepository: MealRepositoryProtocol {
             }
             .eraseToAnyPublisher()
         }
-      }.eraseToAnyPublisher()
-  }
-
-  func searchMealByName(query: String) -> AnyPublisher<[MealModel], Error> {
-    return self.locale.searchMealByName(from: query)
-      .flatMap { _ -> AnyPublisher<[MealModel], Error> in
-        return self.locale.searchMealByName(from: query)
-          .map {
-            MealMapper.mapMealEntitiesToDomains(input: $0)
-          }
-          .eraseToAnyPublisher()
       }.eraseToAnyPublisher()
   }
   

@@ -17,8 +17,6 @@ protocol LocaleDataSourceProtocol: AnyObject {
   func getMealByCategory(categoryName: String) -> AnyPublisher<[MealEntity], Error>
   func addMeals(from meals: [MealEntity]) -> AnyPublisher<Bool, Error>
   
-  func searchMealByName(from query: String) -> AnyPublisher<[MealEntity], Error>
-  
   func getMealFavorite() -> AnyPublisher<[MealEntity], Error>
   func addMealToFavorite(from meals: MealEntity) -> AnyPublisher<Bool, Error>
 }
@@ -98,21 +96,6 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
         } catch {
           completion(.failure(DatabaseError.requestFailed))
         }
-      } else {
-        completion(.failure(DatabaseError.invalidInstance))
-      }
-    }.eraseToAnyPublisher()
-  }
-  
-  func searchMealByName(from query: String) -> AnyPublisher<[MealEntity], Error> {
-    return Future<[MealEntity], Error> { completion in
-      if let realm = self.realm {
-        let meals: Results<MealEntity> = {
-          realm.objects(MealEntity.self)
-            .filter("name == %@", query)
-            .sorted(byKeyPath: "name", ascending: true)
-        }()
-        completion(.success(meals.toArray(ofType: MealEntity.self)))
       } else {
         completion(.failure(DatabaseError.invalidInstance))
       }

@@ -30,7 +30,7 @@ struct ItemRowFavorite: View {
         bottom: 8,
         trailing: 16
       ))
-    .background(Color.gray.opacity(0.2))
+    .background(Color.random.opacity(0.3))
     .cornerRadius(20)
   }
 }

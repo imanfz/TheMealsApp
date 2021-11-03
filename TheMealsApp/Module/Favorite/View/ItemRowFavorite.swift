@@ -12,7 +12,6 @@ struct ItemRowFavorite: View {
 
   var meal: MealModel
   let Action: () -> Void
-  @State private var sh = false
   
   var body: some View {
     HStack {

@@ -19,7 +19,14 @@
 		F440FE00272A035900FFFD0D /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440FDFF272A035900FFFD0D /* ColorExt.swift */; };
 		F440FE02272A03D800FFFD0D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440FE01272A03D800FFFD0D /* DetailPresenter.swift */; };
 		F440FE04272A040A00FFFD0D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440FE03272A040A00FFFD0D /* DetailView.swift */; };
-		F45244D22732CEC4000DB0D5 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45244D12732CEC4000DB0D5 /* PopupView.swift */; };
+		F46888ED27342C83007C3A60 /* DetailMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888EC27342C83007C3A60 /* DetailMealView.swift */; };
+		F46888F027342CC2007C3A60 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888EF27342CC2007C3A60 /* DetailRouter.swift */; };
+		F46888F227342DAB007C3A60 /* DetailMealEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888F127342DAB007C3A60 /* DetailMealEntity.swift */; };
+		F46888F427342F5C007C3A60 /* DetailMealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888F327342F5C007C3A60 /* DetailMealResponse.swift */; };
+		F46888F627343F4F007C3A60 /* DetailMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888F527343F4F007C3A60 /* DetailMealModel.swift */; };
+		F46888F82734405D007C3A60 /* DetailMealMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888F72734405D007C3A60 /* DetailMealMapper.swift */; };
+		F46888FC2734455C007C3A60 /* DetailMealsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888FB2734455C007C3A60 /* DetailMealsInteractor.swift */; };
+		F46888FE2734476D007C3A60 /* DetailMealsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46888FD2734476D007C3A60 /* DetailMealsPresenter.swift */; };
 		F48B883B2728D14000CB0FF6 /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B883A2728D14000CB0FF6 /* CategoryEntity.swift */; };
 		F48B883D2728D18600CB0FF6 /* MealEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B883C2728D18600CB0FF6 /* MealEntity.swift */; };
 		F48B883F2728D25000CB0FF6 /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B883E2728D25000CB0FF6 /* LocaleDataSource.swift */; };
@@ -77,8 +84,15 @@
 		F440FDFF272A035900FFFD0D /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		F440FE01272A03D800FFFD0D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		F440FE03272A040A00FFFD0D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		F45244D12732CEC4000DB0D5 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		F462B4F9273214B7006912F9 /* TheMealsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMealsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46888EC27342C83007C3A60 /* DetailMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealView.swift; sourceTree = "<group>"; };
+		F46888EF27342CC2007C3A60 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		F46888F127342DAB007C3A60 /* DetailMealEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealEntity.swift; sourceTree = "<group>"; };
+		F46888F327342F5C007C3A60 /* DetailMealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealResponse.swift; sourceTree = "<group>"; };
+		F46888F527343F4F007C3A60 /* DetailMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealModel.swift; sourceTree = "<group>"; };
+		F46888F72734405D007C3A60 /* DetailMealMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealMapper.swift; sourceTree = "<group>"; };
+		F46888FB2734455C007C3A60 /* DetailMealsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealsInteractor.swift; sourceTree = "<group>"; };
+		F46888FD2734476D007C3A60 /* DetailMealsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMealsPresenter.swift; sourceTree = "<group>"; };
 		F48B883A2728D14000CB0FF6 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
 		F48B883C2728D18600CB0FF6 /* MealEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealEntity.swift; sourceTree = "<group>"; };
 		F48B883E2728D25000CB0FF6 /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
@@ -149,6 +163,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F46888E927342C54007C3A60 /* DetailMeal */ = {
+			isa = PBXGroup;
+			children = (
+				F46888EB27342C69007C3A60 /* Presenter */,
+				F46888EA27342C60007C3A60 /* View */,
+			);
+			path = DetailMeal;
+			sourceTree = "<group>";
+		};
+		F46888EA27342C60007C3A60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F46888EC27342C83007C3A60 /* DetailMealView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F46888EB27342C69007C3A60 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F46888FD2734476D007C3A60 /* DetailMealsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F46888EE27342CA2007C3A60 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F46888EF27342CC2007C3A60 /* DetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		F49991542728BE76006DA6BE = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				F49991822728BF37006DA6BE /* Detail */,
+				F46888E927342C54007C3A60 /* DetailMeal */,
 				F49991802728BF25006DA6BE /* Favorite */,
 				F49991832728BF3F006DA6BE /* Home */,
 				F4C1CC1E272E973700FB0BA5 /* Profile */,
@@ -292,6 +340,7 @@
 			children = (
 				F48B883A2728D14000CB0FF6 /* CategoryEntity.swift */,
 				F48B883C2728D18600CB0FF6 /* MealEntity.swift */,
+				F46888F127342DAB007C3A60 /* DetailMealEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -301,6 +350,7 @@
 			children = (
 				F48B88422728D5BD00CB0FF6 /* CategoriesResponse.swift */,
 				F48B88442728D5CA00CB0FF6 /* MealsResponse.swift */,
+				F46888F327342F5C007C3A60 /* DetailMealResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -317,6 +367,7 @@
 		F49991822728BF37006DA6BE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				F46888EE27342CA2007C3A60 /* Router */,
 				F49991882728BF5E006DA6BE /* Presenter */,
 				F49991872728BF58006DA6BE /* View */,
 			);
@@ -400,7 +451,6 @@
 				F48B88562728E92400CB0FF6 /* CustomEmptyView.swift */,
 				F48B88582728E96300CB0FF6 /* ActivityIndicator.swift */,
 				F48B885A2728E99200CB0FF6 /* SearchBar.swift */,
-				F45244D12732CEC4000DB0D5 /* PopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +469,7 @@
 			children = (
 				F48B884E2728E06700CB0FF6 /* CategoryMapper.swift */,
 				F48B88502728E07100CB0FF6 /* MealMapper.swift */,
+				F46888F72734405D007C3A60 /* DetailMealMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -437,6 +488,7 @@
 				F440FDEF2729FDB500FFFD0D /* HomeInteractor.swift */,
 				F440FDF12729FDC600FFFD0D /* DetailInteractor.swift */,
 				F440FDF32729FDDB00FFFD0D /* FavoriteInteractor.swift */,
+				F46888FB2734455C007C3A60 /* DetailMealsInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -446,6 +498,7 @@
 			children = (
 				F48B884A2728E01100CB0FF6 /* CategoryModel.swift */,
 				F48B884C2728E01B00CB0FF6 /* MealModel.swift */,
+				F46888F527343F4F007C3A60 /* DetailMealModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -639,8 +692,11 @@
 			files = (
 				F48B884D2728E01B00CB0FF6 /* MealModel.swift in Sources */,
 				F440FE00272A035900FFFD0D /* ColorExt.swift in Sources */,
+				F46888FE2734476D007C3A60 /* DetailMealsPresenter.swift in Sources */,
+				F46888ED27342C83007C3A60 /* DetailMealView.swift in Sources */,
 				F440FDFC272A02BB00FFFD0D /* HomeView.swift in Sources */,
 				F48B884B2728E01100CB0FF6 /* CategoryModel.swift in Sources */,
+				F46888FC2734455C007C3A60 /* DetailMealsInteractor.swift in Sources */,
 				F440FDFE272A030500FFFD0D /* ItemRowCategory.swift in Sources */,
 				F48B883F2728D25000CB0FF6 /* LocaleDataSource.swift in Sources */,
 				F49991612728BE76006DA6BE /* AppDelegate.swift in Sources */,
@@ -655,12 +711,14 @@
 				F48B88452728D5CA00CB0FF6 /* MealsResponse.swift in Sources */,
 				F4C1CC21272E975600FB0BA5 /* ProfileView.swift in Sources */,
 				F48B88432728D5BD00CB0FF6 /* CategoriesResponse.swift in Sources */,
+				F46888F627343F4F007C3A60 /* DetailMealModel.swift in Sources */,
 				F49991962728C07E006DA6BE /* ApiService.swift in Sources */,
 				F4958CD4272B1F4C0026666F /* FavoriteView.swift in Sources */,
 				F49991652728BE76006DA6BE /* ContentView.swift in Sources */,
-				F45244D22732CEC4000DB0D5 /* PopupView.swift in Sources */,
 				F440FDEE2729FD7E00FFFD0D /* Injection.swift in Sources */,
 				F48B884F2728E06700CB0FF6 /* CategoryMapper.swift in Sources */,
+				F46888F027342CC2007C3A60 /* DetailRouter.swift in Sources */,
+				F46888F227342DAB007C3A60 /* DetailMealEntity.swift in Sources */,
 				F440FDF22729FDC600FFFD0D /* DetailInteractor.swift in Sources */,
 				F48B885B2728E99200CB0FF6 /* SearchBar.swift in Sources */,
 				F440FE02272A03D800FFFD0D /* DetailPresenter.swift in Sources */,
@@ -670,8 +728,10 @@
 				F48B88592728E96300CB0FF6 /* ActivityIndicator.swift in Sources */,
 				F440FE04272A040A00FFFD0D /* DetailView.swift in Sources */,
 				F48B88492728DE6C00CB0FF6 /* MealRepository.swift in Sources */,
+				F46888F427342F5C007C3A60 /* DetailMealResponse.swift in Sources */,
 				F440FDF42729FDDB00FFFD0D /* FavoriteInteractor.swift in Sources */,
 				F440FDF02729FDB500FFFD0D /* HomeInteractor.swift in Sources */,
+				F46888F82734405D007C3A60 /* DetailMealMapper.swift in Sources */,
 				F48B883D2728D18600CB0FF6 /* MealEntity.swift in Sources */,
 				F440FDF8272A016A00FFFD0D /* HomeRouter.swift in Sources */,
 				F48B88512728E07100CB0FF6 /* MealMapper.swift in Sources */,

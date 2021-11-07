@@ -11,6 +11,7 @@ import Toaster
 
 class FavoritePresenter: ObservableObject {
   
+  private let router = DetailRouter()
   private let favoriteUseCase: FavoriteUseCase
   private var cancellables: Set<AnyCancellable> = []
   
@@ -72,4 +73,13 @@ class FavoritePresenter: ObservableObject {
       })
       .store(in: &cancellables)
   }
+  
+  func linkBuilder<Content: View>(
+    for id: String,
+    @ViewBuilder content: () -> Content
+  ) -> some View {
+    NavigationLink(
+    destination: router.makeDetailView(for: id)) { content() }
+  }
+  
 }

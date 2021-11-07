@@ -13,8 +13,6 @@ struct FavoriteView: View {
   @ObservedObject var presenter: FavoritePresenter
   @State var searchText: String = ""
   @State var searching: Bool = false
-  @State var isPresented = false
-  @State var selectedMeal: MealModel?
   
   var body: some View {
     ZStack {
@@ -33,11 +31,6 @@ struct FavoriteView: View {
 }
 
 extension FavoriteView {
-  
-  func handleTap(_ meal: MealModel) {
-    self.selectedMeal = meal
-    self.isPresented = true
-  }
   
   var loadingIndicator: some View {
     VStack {
@@ -72,7 +65,7 @@ extension FavoriteView {
         onSearchButtonClicked: hideKeyboard,
         onSearchCancelButtonClicked: hideKeyboard,
         placeHolder: "Search meal"
-      )
+      ).padding(.horizontal, 8)
       ScrollView(.vertical, showsIndicators: false) {
         ForEach(
           self.presenter.meals.filter {
@@ -80,10 +73,9 @@ extension FavoriteView {
           }, id: \.id
         ) { meal in
           ZStack {
-            ItemRowFavorite(meal: meal, Action: addRemoveFavorite(from: meal))
-              .onTapGesture {
-                self.handleTap(meal)
-              }
+            self.presenter.linkBuilder(for: meal.id) {
+              ItemRowFavorite(meal: meal, Action: addRemoveFavorite(from: meal))
+            }.buttonStyle(PlainButtonStyle())
           }.padding(
             EdgeInsets(
               top: 4,
@@ -94,26 +86,7 @@ extension FavoriteView {
           )
         }
       }
-    }.modifier(PopupView(
-      isPresented: isPresented,
-      alignment: .center,
-      content: {
-        BlurView().onTapGesture {
-          self.isPresented = false
-        }.opacity(0.7)
-        VStack(alignment: .center) {
-          imageMeal(self.selectedMeal?.image ?? "")
-          headerTitle(self.selectedMeal?.name ?? "")
-        }.frame(
-          width: 250,
-          height: 300
-        ).background(Color.white)
-          .cornerRadius(30)
-          .onTapGesture {
-            self.isPresented = false
-          }
-        }
-    ))
+    }
   }
   
   func addRemoveFavorite(from meal: MealModel) -> () -> Void {

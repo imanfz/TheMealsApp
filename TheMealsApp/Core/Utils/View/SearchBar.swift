@@ -52,6 +52,7 @@ struct SearchBar: UIViewRepresentable {
     let searchBar = UISearchBar(frame: .zero)
     searchBar.delegate = context.coordinator
     searchBar.placeholder = placeHolder
+    searchBar.backgroundImage = UIImage()
     return searchBar
   }
 

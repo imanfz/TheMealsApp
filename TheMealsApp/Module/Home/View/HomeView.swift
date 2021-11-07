@@ -47,7 +47,7 @@ extension HomeView {
         onSearchButtonClicked: hideKeyboard,
         onSearchCancelButtonClicked: hideKeyboard,
         placeHolder: "Search category"
-      )
+      ).padding(.horizontal, 8)
       ScrollView(.vertical, showsIndicators: false) {
         ForEach(
           self.presenter.categories.filter {

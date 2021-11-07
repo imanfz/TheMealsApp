@@ -19,6 +19,9 @@ protocol LocaleDataSourceProtocol: AnyObject {
   
   func getMealFavorite() -> AnyPublisher<[MealEntity], Error>
   func addMealToFavorite(from meals: MealEntity) -> AnyPublisher<Bool, Error>
+  
+  func getDetailMeal(id: String) -> AnyPublisher<DetailMealEntity, Error>
+  func addDetailMeal(from detail: DetailMealEntity) -> AnyPublisher<Bool, Error>
 }
 
 final class LocaleDataSource: NSObject {
@@ -134,6 +137,36 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     }.eraseToAnyPublisher()
   }
   
+  func addDetailMeal(from detail: DetailMealEntity) -> AnyPublisher<Bool, Error> {
+    return Future<Bool, Error> { completion in
+      if let realm = self.realm {
+        do {
+          try realm.write {
+            realm.add(detail, update: .all)
+            completion(.success(true))
+          }
+        } catch {
+          completion(.failure(DatabaseError.requestFailed))
+        }
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }.eraseToAnyPublisher()
+  }
+  
+  func getDetailMeal(id: String) -> AnyPublisher<DetailMealEntity, Error> {
+    return Future<DetailMealEntity, Error> { completion in
+      if let realm = self.realm {
+        let details: DetailMealEntity = {
+          realm.object(ofType: DetailMealEntity.self, forPrimaryKey: id)
+        }() ?? DetailMealEntity()
+        completion(.success(details))
+      } else {
+        completion(.failure(DatabaseError.invalidInstance))
+      }
+    }.eraseToAnyPublisher()
+  }
+  
 }
 
 extension Results {
@@ -147,5 +180,5 @@ extension Results {
     }
     return array
   }
-   
+
 }

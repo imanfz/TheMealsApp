@@ -33,13 +33,13 @@ struct ContentView: View {
       .tabItem {
         Image(
           systemName: selection == 0 ? "house.circle.fill" : "house.circle"
-        )
+        ).renderingMode(.original)
         Text("Home")
       }.tag(0)
         
       NavigationView {
         FavoriteView(presenter: favoritePresenter)
-      }
+      }.id(self.resetNavigationID)
       .tabItem {
         Image(
           systemName: selection == 1 ? "heart.circle.fill" : "heart.circle"

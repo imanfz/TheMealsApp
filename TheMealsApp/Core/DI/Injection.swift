@@ -33,5 +33,10 @@ final class Injection: NSObject {
     let repository = provideRepository()
     return FavoriteInteractor(repository: repository)
   }
+  
+  func providerDetailMeals(id: String) -> DetailMealsUseCase {
+    let repository = provideRepository()
+    return DetailMealsInteractor(repository: repository, id: id)
+  }
 
 }

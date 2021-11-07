@@ -17,6 +17,9 @@ protocol MealRepositoryProtocol {
   func getMealsFavorite() -> AnyPublisher<[MealModel], Error>
   
   func addMealsToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error>
+  
+  func getDetailMeals(id: String) -> AnyPublisher<DetailMealModel, Error>
+  
 }
 
 final class MealRepository: NSObject {
@@ -87,6 +90,26 @@ extension MealRepository: MealRepositoryProtocol {
   
   func addMealsToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error> {
     return self.locale.addMealToFavorite(from: MealMapper.mapMealDomainsToEntities(input: meal))
+  }
+  
+  func getDetailMeals(id: String) -> AnyPublisher<DetailMealModel, Error> {
+    return self.locale.getDetailMeal(id: id)
+      .flatMap { result -> AnyPublisher<DetailMealModel, Error> in
+        if result.id.isEmpty {
+          return self.remote.getDetailMeals(id: id)
+            .map { DetailMealMapper.mapDetailMealResponsesToEntities(input: $0) }
+            .flatMap { self.locale.addDetailMeal(from: $0) }
+            .filter { $0 }
+            .flatMap { _ in self.locale.getDetailMeal(id: id)
+              .map { DetailMealMapper.mapDetailMealEntitiesToDomains(input: $0) }
+            }
+            .eraseToAnyPublisher()
+        } else {
+          return self.locale.getDetailMeal(id: id)
+            .map { DetailMealMapper.mapDetailMealEntitiesToDomains(input: $0)}
+            .eraseToAnyPublisher()
+        }
+      }.eraseToAnyPublisher()
   }
   
 }

@@ -5,12 +5,13 @@
 //  Created by Iman Faizal on 28/10/21.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 import Toaster
 
 class DetailPresenter: ObservableObject {
 
+  private let router = DetailRouter()
   private let detailUseCase: DetailUseCase
   private var cancellables: Set<AnyCancellable> = []
 
@@ -74,4 +75,14 @@ class DetailPresenter: ObservableObject {
       })
       .store(in: &cancellables)
   }
+  
+  func linkBuilder<Content: View>(
+    for id: String,
+    @ViewBuilder content: () -> Content
+  ) -> some View {
+    NavigationLink(destination: router.makeDetailView(for: id)) {
+      content()
+    }
+  }
+  
 }

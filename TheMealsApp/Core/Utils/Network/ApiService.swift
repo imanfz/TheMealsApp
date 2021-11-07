@@ -13,10 +13,12 @@ struct API {
 
 struct ApiService {
   static let getCategories: String = "\(API.baseUrl)categories.php"
+  
   static let getMealsByCategory: (String) -> String = { categoryName in
     return "\(API.baseUrl)filter.php?c=\(categoryName)"
   }
-  static let getMealsDetail: (Int) -> String = { mealsId in
+  
+  static let getDetailMeals: (String) -> String = { mealsId in
     return "\(API.baseUrl)lookup.php?i=\(mealsId)"
   }
 }

@@ -15,6 +15,8 @@ protocol RemoteDataSourceProtocol: AnyObject {
   
   func getMealByCategory(categoryName: String) -> AnyPublisher<[MealItem], Error>
   
+  func getDetailMeals(id: String) -> AnyPublisher<DetailMeal, Error>
+  
 }
 
 final class RemoteDataSource: NSObject {
@@ -53,6 +55,23 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
             switch response.result {
             case .success(let value):
               completion(.success(value.meals))
+            case .failure:
+              completion(.failure(URLError.invalidResponse))
+            }
+          }
+      }
+    }.eraseToAnyPublisher()
+  }
+  
+  func getDetailMeals(id: String) -> AnyPublisher<DetailMeal, Error> {
+    return Future<DetailMeal, Error> { completion in
+      if let url = URL(string: ApiService.getDetailMeals(id)) {
+        AF.request(url)
+          .validate()
+          .responseDecodable(of: DetailMealsResponse.self) { response in
+            switch response.result {
+            case .success(let value):
+              completion(.success(value.meals[0]))
             case .failure:
               completion(.failure(URLError.invalidResponse))
             }

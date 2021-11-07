@@ -44,7 +44,7 @@ class HomePresenter: ObservableObject {
     @ViewBuilder content: () -> Content
   ) -> some View {
     NavigationLink(
-    destination: router.makeDetailView(for: category)) { content() }
+      destination: router.makeDetailView(for: category)) { content() }
   }
 
 }

@@ -16,6 +16,7 @@ struct ContentView: View {
   @State private var resetNavigationID = UUID()
   
   var body: some View {
+    
     let selectable = Binding(
       // << proxy binding to catch tab tap
       get: { self.selection },
@@ -29,7 +30,8 @@ struct ContentView: View {
     TabView(selection: selectable) {
       NavigationView {
         HomeView(presenter: homePresenter)
-      }.id(self.resetNavigationID)
+      }
+      .id(self.resetNavigationID)
       .tabItem {
         Image(
           systemName: selection == 0 ? "house.circle.fill" : "house.circle"
@@ -39,7 +41,7 @@ struct ContentView: View {
         
       NavigationView {
         FavoriteView(presenter: favoritePresenter)
-      }.id(self.resetNavigationID)
+      }
       .tabItem {
         Image(
           systemName: selection == 1 ? "heart.circle.fill" : "heart.circle"
@@ -59,8 +61,9 @@ struct ContentView: View {
     }.onAppear {
       configureAppearance()
       configureAccessibility()
-    }.accentColor(Color.random)
+    }
   }
+  
 }
 
 extension ContentView {

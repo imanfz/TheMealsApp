@@ -11,7 +11,7 @@ struct HomeView: View {
 
   @ObservedObject var presenter: HomePresenter
   @State var searchText: String = ""
-  
+
   var body: some View {
     ZStack {
       if presenter.loadingState {
@@ -36,7 +36,7 @@ extension HomeView {
   var loadingIndicator: some View {
     VStack {
       Text("Loading...")
-      ActivityIndicator()
+      ProgressView()
     }
   }
   
@@ -55,14 +55,17 @@ extension HomeView {
           },
           id: \.id
         ) { category in
+          
           ZStack {
             self.presenter.linkBuilder(for: category) {
               ItemRowCategory(category: category)
             }.buttonStyle(PlainButtonStyle())
-          }.padding(8)
+          }.padding(
+            EdgeInsets(top: 0, leading: 8, bottom: 8, trailing: 8)
+          )
         }
       }
-    }
+    }.padding(.bottom, 50)
   }
   
   func hideKeyboard() {

@@ -8,7 +8,7 @@ target 'TheMealsApp' do
   # Pods for TheMealsApp
   pod 'Alamofire', '~> 5.4'
   pod 'SDWebImageSwiftUI', '~> 2.0'
-  pod 'RealmSwift', '~> 10.18'
+  pod 'RealmSwift', '~> 10.19'
   pod 'Toaster'
 
 end

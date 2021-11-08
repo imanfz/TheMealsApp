@@ -27,6 +27,7 @@ struct DetailMealView: View {
       .toolbar(content: {
           ToolbarItem(placement: .navigation) {
              Image(systemName: "arrow.left")
+              .foregroundColor(.blue)
               .onTapGesture {
                 self.presentation.wrappedValue.dismiss()
               }
@@ -48,7 +49,7 @@ extension DetailMealView {
   var loadingIndicator: some View {
     VStack {
       Text("Loading...")
-      ActivityIndicator()
+      ProgressView()
     }
   }
   
@@ -78,7 +79,7 @@ extension DetailMealView {
   }
   
   var content: some View {
-    ScrollView {
+    ScrollView(.vertical, showsIndicators: false) {
       VStack {
         imageMeal(self.presenter.details.image ?? "-")
         VStack(alignment: .leading, spacing: 10) {
@@ -96,6 +97,6 @@ extension DetailMealView {
           )
         )
       }
-    }
+    }.padding(.bottom, 50)
   }
 }

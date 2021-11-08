@@ -35,7 +35,7 @@ extension FavoriteView {
   var loadingIndicator: some View {
     VStack {
       Text("Loading...")
-      ActivityIndicator()
+      ProgressView()
     }
   }
   
@@ -86,7 +86,7 @@ extension FavoriteView {
           )
         }
       }
-    }
+    }.padding(.bottom, 50)
   }
   
   func addRemoveFavorite(from meal: MealModel) -> () -> Void {

@@ -32,7 +32,7 @@ struct ItemRowMeal: View {
         trailing: 16
       )
     )
-    .background(Color.random.opacity(0.2))
+    .background(Color.gray.opacity(0.2))
     .cornerRadius(20)
     .onAppear {
       // check status favorite of meals

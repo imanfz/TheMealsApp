@@ -35,7 +35,8 @@ struct DetailView: View {
     ).navigationBarBackButtonHidden(true)
     .toolbar(content: {
         ToolbarItem(placement: .navigation) {
-           Image(systemName: "arrow.left")
+          Image(systemName: "arrow.left")
+            .foregroundColor(.blue)
             .onTapGesture {
               self.presentation.wrappedValue.dismiss()
             }
@@ -54,7 +55,7 @@ extension DetailView {
   var loadingIndicator: some View {
     VStack {
       Text("Loading...")
-      ActivityIndicator()
+      ProgressView()
     }
   }
 
@@ -122,7 +123,7 @@ extension DetailView {
           DetailMealView(presenter: detailPresenter)
         }.padding(.top)
       }
-    }
+    }.padding(.bottom, 50)
   }
   
   var listItem: some View {

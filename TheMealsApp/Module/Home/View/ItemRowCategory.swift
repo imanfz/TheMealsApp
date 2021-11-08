@@ -17,7 +17,7 @@ struct ItemRowCategory: View {
       content
     }
     .frame(width: UIScreen.main.bounds.width - 32, height: 250)
-    .background(Color.random.opacity(0.3))
+    .background(Color.gray.opacity(0.2))
     .cornerRadius(20)
   }
 

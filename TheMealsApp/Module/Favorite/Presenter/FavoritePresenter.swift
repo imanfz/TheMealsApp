@@ -79,7 +79,7 @@ class FavoritePresenter: ObservableObject {
     @ViewBuilder content: () -> Content
   ) -> some View {
     NavigationLink(
-    destination: router.makeDetailView(for: id)) { content() }
+      destination: router.makeDetailView(for: id)) { content() }
   }
   
 }

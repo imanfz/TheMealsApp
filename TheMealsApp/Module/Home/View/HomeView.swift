@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
-
+  
   @ObservedObject var presenter: HomePresenter
   @State var searchText: String = ""
-
+  
   var body: some View {
     ZStack {
       if presenter.loadingState {
@@ -28,7 +28,7 @@ struct HomeView: View {
       displayMode: .automatic
     ).edgesIgnoringSafeArea(.bottom)
   }
-
+  
 }
 
 extension HomeView {

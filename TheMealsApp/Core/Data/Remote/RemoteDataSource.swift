@@ -10,7 +10,7 @@ import Alamofire
 import Combine
 
 protocol RemoteDataSourceProtocol: AnyObject {
-
+  
   func getCategories() -> AnyPublisher<[CategoryItem], Error>
   
   func getMealByCategory(categoryName: String) -> AnyPublisher<[MealItem], Error>
@@ -20,11 +20,11 @@ protocol RemoteDataSourceProtocol: AnyObject {
 }
 
 final class RemoteDataSource: NSObject {
-
+  
   private override init() { }
-
+  
   static let sharedInstance: RemoteDataSource =  RemoteDataSource()
-
+  
 }
 
 extension RemoteDataSource: RemoteDataSourceProtocol {

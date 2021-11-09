@@ -8,7 +8,7 @@
 import RealmSwift
 
 extension Results {
-   
+  
   func toArray<T>(ofType: T.Type) -> [T] {
     var array = [T]()
     for index in 0 ..< count {
@@ -18,5 +18,5 @@ extension Results {
     }
     return array
   }
-
+  
 }

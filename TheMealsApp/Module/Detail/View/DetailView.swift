@@ -14,7 +14,7 @@ struct DetailView: View {
   @ObservedObject var detailPresenter: DetailMealsPresenter
   @Environment(\.presentationMode) var presentation
   @State var presented: Bool = false
-
+  
   var body: some View {
     ZStack {
       if presenter.loadingState {
@@ -33,7 +33,7 @@ struct DetailView: View {
       Text(self.presenter.category.title),
       displayMode: .large
     ).navigationBarBackButtonHidden(true)
-    .toolbar(content: {
+      .toolbar(content: {
         ToolbarItem(placement: .navigation) {
           Image(systemName: "arrow.left")
             .foregroundColor(.blue)
@@ -41,8 +41,8 @@ struct DetailView: View {
               self.presentation.wrappedValue.dismiss()
             }
         }
-     })
-    .edgesIgnoringSafeArea(.bottom)
+      })
+      .edgesIgnoringSafeArea(.bottom)
   }
 }
 
@@ -58,7 +58,7 @@ extension DetailView {
       ProgressView()
     }
   }
-
+  
   var imageCategory: some View {
     WebImage(url: URL(string: self.presenter.category.image)
     ).resizable()
@@ -79,12 +79,12 @@ extension DetailView {
       .frame(width: 50, height: 6)
       .padding(10)
   }
-
+  
   var description: some View {
     Text(self.presenter.category.description)
       .font(.system(size: 15))
   }
-
+  
   func headerTitle(_ title: String) -> some View {
     return Text(title)
       .font(.headline)
@@ -95,7 +95,7 @@ extension DetailView {
       .font(.title)
       .bold()
   }
-
+  
   var content: some View {
     ScrollView(.vertical, showsIndicators: false) {
       VStack {

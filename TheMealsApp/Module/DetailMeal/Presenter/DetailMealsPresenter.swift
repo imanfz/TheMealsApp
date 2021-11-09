@@ -12,7 +12,7 @@ class DetailMealsPresenter: ObservableObject {
   
   private let detailsUseCase: DetailMealsUseCase
   private var cancellables: Set<AnyCancellable> = []
-
+  
   @Published var id: String
   @Published var details: DetailMealModel = DetailMealModel()
   @Published var errorMessage: String = ""

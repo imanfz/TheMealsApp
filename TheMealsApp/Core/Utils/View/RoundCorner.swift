@@ -12,7 +12,7 @@ struct RoundedCorners: Shape {
   var tr: CGFloat = 0.0
   var bl: CGFloat = 0.0
   var br: CGFloat = 0.0
-
+  
   func path(in rect: CGRect) -> Path {
     let width = rect.size.width
     let height = rect.size.height
@@ -20,9 +20,9 @@ struct RoundedCorners: Shape {
     let tl = min(min(self.tl, height/2), width/2)
     let bl = min(min(self.bl, height/2), width/2)
     let br = min(min(self.br, height/2), width/2)
-
+    
     var path = Path()
-
+    
     path.move(to: CGPoint(x: width / 2.0, y: 0))
     path.addLine(to: CGPoint(x: width - tr, y: 0))
     path.addArc(
@@ -32,7 +32,7 @@ struct RoundedCorners: Shape {
       endAngle: Angle(degrees: 0),
       clockwise: false
     )
-
+    
     path.addLine(to: CGPoint(x: width, y: height - br))
     path.addArc(
       center: CGPoint(x: width - br, y: height - br),
@@ -41,7 +41,7 @@ struct RoundedCorners: Shape {
       endAngle: Angle(degrees: 90),
       clockwise: false
     )
-
+    
     path.addLine(to: CGPoint(x: bl, y: height))
     path.addArc(
       center: CGPoint(x: bl, y: height - bl),
@@ -50,7 +50,7 @@ struct RoundedCorners: Shape {
       endAngle: Angle(degrees: 180),
       clockwise: false
     )
-
+    
     path.addLine(to: CGPoint(x: 0, y: tl))
     path.addArc(
       center: CGPoint(x: tl, y: tl),
@@ -59,8 +59,8 @@ struct RoundedCorners: Shape {
       endAngle: Angle(degrees: 270),
       clockwise: false
     )
-
+    
     return path
   }
-
+  
 }

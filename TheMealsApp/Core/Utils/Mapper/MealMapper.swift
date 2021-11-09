@@ -13,7 +13,7 @@ final class MealMapper {
     input mealItems: [MealItem],
     categoryName: String
   ) -> [MealModel] {
-
+    
     return mealItems.map { result in
       return MealModel(
         id: result.id ?? "",
@@ -38,7 +38,7 @@ final class MealMapper {
       return newMeal
     }
   }
-   
+  
   static func mapMealEntitiesToDomains(
     input mealEntities: [MealEntity]
   ) -> [MealModel] {

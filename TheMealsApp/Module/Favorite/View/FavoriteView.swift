@@ -98,7 +98,7 @@ extension FavoriteView {
           return true
         }
       }
-
+      
       let updateMeal = MealModel(
         id: meal.id,
         name: meal.name,

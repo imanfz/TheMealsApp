@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 protocol HomeUseCase {
-
+  
   func getCategories() -> AnyPublisher<[CategoryModel], Error>
-
+  
 }
 
 class HomeInteractor: HomeUseCase {
@@ -27,5 +27,5 @@ class HomeInteractor: HomeUseCase {
   func getCategories() -> AnyPublisher<[CategoryModel], Error> {
     return repository.getCategories()
   }
-
+  
 }

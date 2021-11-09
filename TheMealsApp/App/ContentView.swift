@@ -22,10 +22,11 @@ struct ContentView: View {
       get: { self.selection },
       set: { self.selection = $0
         
-      // set new ID to recreate NavigationView, so put it
-      // in root state, same as is on change tab and back
-      self.resetNavigationID = UUID()
-    })
+        // set new ID to recreate NavigationView, so put it
+        // in root state, same as is on change tab and back
+        self.resetNavigationID = UUID()
+      }
+    )
     
     TabView(selection: selectable) {
       NavigationView {
@@ -38,7 +39,7 @@ struct ContentView: View {
         ).renderingMode(.original)
         Text("Home")
       }.tag(0)
-        
+      
       NavigationView {
         FavoriteView(presenter: favoritePresenter)
       }
@@ -53,11 +54,11 @@ struct ContentView: View {
         ProfileView()
       }
       .tabItem {
-          Image(
-            systemName: selection == 2 ? "person.circle.fill" : "person.circle"
-          ).renderingMode(.original)
-          Text("Profile")
-        }.tag(2)
+        Image(
+          systemName: selection == 2 ? "person.circle.fill" : "person.circle"
+        ).renderingMode(.original)
+        Text("Profile")
+      }.tag(2)
     }.onAppear {
       configureAppearance()
       configureAccessibility()
@@ -75,7 +76,7 @@ extension ContentView {
     appearance.cornerRadius = 20
     appearance.maxWidthRatio = 0.7
   }
-
+  
   func configureAccessibility() {
     ToastCenter.default.isSupportAccessibility = true
   }

@@ -9,11 +9,11 @@ import SwiftUI
 import Combine
 
 class HomePresenter: ObservableObject {
-
+  
   private let router = HomeRouter()
   private let homeUseCase: HomeUseCase
   private var cancellables: Set<AnyCancellable> = []
-
+  
   @Published var categories: [CategoryModel] = []
   @Published var errorMessage: String = ""
   @Published var loadingState: Bool = false
@@ -46,5 +46,5 @@ class HomePresenter: ObservableObject {
     NavigationLink(
       destination: router.makeDetailView(for: category)) { content() }
   }
-
+  
 }

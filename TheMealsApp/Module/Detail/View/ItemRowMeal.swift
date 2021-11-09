@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ItemRowMeal: View {
-
+  
   var meal: MealModel
   @State var selection: Int = 0
   let Action: () -> Void
@@ -32,17 +32,17 @@ struct ItemRowMeal: View {
         trailing: 16
       )
     )
-    .background(Color.gray.opacity(0.2))
-    .cornerRadius(20)
-    .onAppear {
-      // check status favorite of meals
-      switch meal.favorite {
-      case true:
-        selection = 1
-      default:
-        selection = 0
+      .background(Color.gray.opacity(0.2))
+      .cornerRadius(20)
+      .onAppear {
+        // check status favorite of meals
+        switch meal.favorite {
+        case true:
+          selection = 1
+        default:
+          selection = 0
+        }
       }
-    }
   }
   
 }
@@ -52,7 +52,7 @@ extension ItemRowMeal {
   var spacer: some View {
     Spacer()
   }
-
+  
   var imageMeal: some View {
     WebImage(url: URL(string: meal.image))
       .resizable()
@@ -92,5 +92,5 @@ extension ItemRowMeal {
         )
     })
   }
-
+  
 }

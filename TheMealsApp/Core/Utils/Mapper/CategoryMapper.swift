@@ -11,7 +11,7 @@ final class CategoryMapper {
   static func mapCategoryResponsesToDomains(
     input categoryItems: [CategoryItem]
   ) -> [CategoryModel] {
-
+    
     return categoryItems.map { result in
       return CategoryModel(
         id: result.id ?? "",
@@ -34,7 +34,7 @@ final class CategoryMapper {
       return newCategory
     }
   }
-   
+  
   static func mapCategoryEntitiesToDomains(
     input categoryEntities: [CategoryEntity]
   ) -> [CategoryModel] {

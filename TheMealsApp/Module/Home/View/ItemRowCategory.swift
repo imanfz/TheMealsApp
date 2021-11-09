@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ItemRowCategory: View {
-
+  
   var category: CategoryModel
   var body: some View {
     VStack {
@@ -20,11 +20,11 @@ struct ItemRowCategory: View {
     .background(Color.gray.opacity(0.2))
     .cornerRadius(20)
   }
-
+  
 }
 
 extension ItemRowCategory {
-
+  
   var imageCategory: some View {
     WebImage(url: URL(string: category.image))
       .resizable()
@@ -54,11 +54,11 @@ extension ItemRowCategory {
       )
     )
   }
-
+  
 }
 
 struct CategoryRow_Previews: PreviewProvider {
-
+  
   static var previews: some View {
     let meal = CategoryModel(
       id: "1",
@@ -68,5 +68,5 @@ struct CategoryRow_Previews: PreviewProvider {
     )
     return ItemRowCategory(category: meal)
   }
-
+  
 }

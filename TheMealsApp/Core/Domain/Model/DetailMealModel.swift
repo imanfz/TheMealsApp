@@ -8,7 +8,7 @@
 import Foundation
 
 struct DetailMealModel: Equatable, Identifiable {
-
+  
   let id: String?
   let name: String?
   let image: String?
@@ -17,7 +17,7 @@ struct DetailMealModel: Equatable, Identifiable {
   let instruction: String?
   let tags: String?
   let category: String?
-
+  
   init(
     id: String? = "",
     name: String? = "",

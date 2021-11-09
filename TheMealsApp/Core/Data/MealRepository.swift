@@ -48,7 +48,7 @@ extension MealRepository: MealRepositoryProtocol {
             .flatMap { self.locale.addCategories(from: $0) }
             .filter { $0 }
             .flatMap { _ in self.locale.getCategories()
-              .map { CategoryMapper.mapCategoryEntitiesToDomains(input: $0) }
+            .map { CategoryMapper.mapCategoryEntitiesToDomains(input: $0) }
             }
             .eraseToAnyPublisher()
         } else {
@@ -68,7 +68,7 @@ extension MealRepository: MealRepositoryProtocol {
             .flatMap { self.locale.addMeals(from: $0) }
             .filter { $0 }
             .flatMap { _ in self.locale.getMealByCategory(categoryName: categoryName)
-              .map { MealMapper.mapMealEntitiesToDomains(input: $0) }
+            .map { MealMapper.mapMealEntitiesToDomains(input: $0) }
             }
             .eraseToAnyPublisher()
         } else {
@@ -101,7 +101,7 @@ extension MealRepository: MealRepositoryProtocol {
             .flatMap { self.locale.addDetailMeal(from: $0) }
             .filter { $0 }
             .flatMap { _ in self.locale.getDetailMeal(id: id)
-              .map { DetailMealMapper.mapDetailMealEntitiesToDomains(input: $0) }
+            .map { DetailMealMapper.mapDetailMealEntitiesToDomains(input: $0) }
             }
             .eraseToAnyPublisher()
         } else {

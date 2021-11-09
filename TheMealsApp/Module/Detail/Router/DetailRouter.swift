@@ -14,4 +14,5 @@ class DetailRouter {
     let presenter = DetailMealsPresenter(detailsUseCase: detailMealUseCase)
     return DetailMealView(presenter: presenter)
   }
+  
 }

@@ -25,18 +25,18 @@ struct DetailMealView: View {
       }
     }.navigationBarBackButtonHidden(true)
       .toolbar(content: {
-          ToolbarItem(placement: .navigation) {
-             Image(systemName: "arrow.left")
-              .foregroundColor(.blue)
-              .onTapGesture {
-                self.presentation.wrappedValue.dismiss()
-              }
-          }
-       })
+        ToolbarItem(placement: .navigation) {
+          Image(systemName: "arrow.left")
+            .foregroundColor(.blue)
+            .onTapGesture {
+              self.presentation.wrappedValue.dismiss()
+            }
+        }
+      })
       .navigationBarTitle(
-      Text(self.presenter.details.name ?? "Unknown"),
-      displayMode: .large
-    ).edgesIgnoringSafeArea(.bottom)
+        Text(self.presenter.details.name ?? "Unknown"),
+        displayMode: .large
+      ).edgesIgnoringSafeArea(.bottom)
   }
 }
 

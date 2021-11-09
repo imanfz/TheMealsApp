@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ItemRowFavorite: View {
-
+  
   var meal: MealModel
   let Action: () -> Void
   
@@ -40,7 +40,7 @@ extension ItemRowFavorite {
   var spacer: some View {
     Spacer()
   }
-
+  
   var imageMeal: some View {
     WebImage(url: URL(string: meal.image))
       .resizable()

@@ -10,22 +10,22 @@ import Combine
 import Toaster
 
 class DetailPresenter: ObservableObject {
-
+  
   private let router = DetailRouter()
   private let detailUseCase: DetailUseCase
   private var cancellables: Set<AnyCancellable> = []
-
+  
   @Published var category: CategoryModel
   @Published var meal: [MealModel] = []
   @Published var errorMessage: String = ""
   @Published var loadingState: Bool = false
   @Published var updateState: Bool = false
-
+  
   init(detailUseCase: DetailUseCase) {
     self.detailUseCase = detailUseCase
     category = detailUseCase.getCategory()
   }
-
+  
   func getMealByCategory() {
     loadingState = true
     detailUseCase.getMealByCategory(categoryName: self.category.title)

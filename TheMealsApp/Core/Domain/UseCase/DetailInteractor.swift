@@ -9,19 +9,19 @@ import Foundation
 import Combine
 
 protocol DetailUseCase {
-
+  
   func getCategory() -> CategoryModel
   func getMealByCategory(categoryName: String) -> AnyPublisher<[MealModel], Error>
   
   func addMealToFavorite(from meal: MealModel) -> AnyPublisher<Bool, Error>
-
+  
 }
 
 class DetailInteractor: DetailUseCase {
   
   private let repository: MealRepositoryProtocol
   private let category: CategoryModel
-
+  
   required init(
     repository: MealRepositoryProtocol,
     category: CategoryModel
@@ -29,7 +29,7 @@ class DetailInteractor: DetailUseCase {
     self.repository = repository
     self.category = category
   }
-
+  
   func getCategory() -> CategoryModel {
     return category
   }
